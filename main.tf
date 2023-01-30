@@ -80,14 +80,14 @@ resource "azureopenshift_redhatopenshift_cluster" "private" {
   dynamic "api_server_profile" {
     for_each = local.aro_configs[var.config_preset]["api_server_profile"]
     content {
-      visibility = setting.value["visibility"]
+      visibility = api_server_profile.value["visibility"]
     }
   }
 
   dynamic "ingress_profile" {
     for_each = local.aro_configs[var.config_preset]["ingress_profile"]
     content {
-      visibility = setting.value["visibility"]
+      visibility = api_server_profile.value["visibility"]
     }
   }
 
