@@ -87,7 +87,7 @@ resource "azureopenshift_redhatopenshift_cluster" "private" {
   dynamic "ingress_profile" {
     for_each = local.aro_configs[var.config_preset]["ingress_profile"]
     content {
-      visibility = api_server_profile.value["visibility"]
+      visibility = ingress_profile.value["visibility"]
     }
   }
 
