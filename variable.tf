@@ -81,3 +81,7 @@ variable "pull_secret_path" {
   Default "false"
   EOF
 }
+
+variable "config_preset" {
+  default = "private_config1"
+}
